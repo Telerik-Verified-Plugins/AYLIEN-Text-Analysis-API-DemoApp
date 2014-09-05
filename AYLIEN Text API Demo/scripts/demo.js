@@ -26,7 +26,17 @@
       }
     },
 
-    checkSimulator: function() {
+    sentiment: function () {
+      if (!this.checkSimulator()) {
+        aylien.sentiment(
+            demoUrl,
+            function (result) {
+              alert(JSON.stringify(result));
+            });
+      }
+    },
+
+      checkSimulator: function() {
       if (window.navigator.simulator === true) {
         alert('This plugin is not available in the simulator.');
         return true;
