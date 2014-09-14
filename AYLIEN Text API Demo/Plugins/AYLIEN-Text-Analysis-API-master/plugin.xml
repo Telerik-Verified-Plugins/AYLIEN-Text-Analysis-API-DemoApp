@@ -23,9 +23,30 @@
 
         <config-file target="*-Info.plist" parent="AylienClientID">
             <!-- replace with your own API key -->
-            <string>zgd9RT660DmshyMZDnqjRT8bFZLxp12fBCwjsnjIicPvLJ6LRv</string>
+            <string>111111111111111111111</string>
         </config-file>
 
 	</platform>
+
+
+	<platform name="android">
+
+		<source-file src="src/android/res/values/aylien.xml" target-dir="res/values" />
+
+        <config-file target="res/values/aylien.xml" parent="/*">
+            <!-- replace with your own API key -->
+            <string name="api_key">111111111111111111111</string>
+        </config-file>
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="Aylien">
+           		<param name="android-package" value="com.telerik.aylien.AylienPlugin"/>
+         	</feature>
+     	</config-file>
+
+     	<source-file src="src/android/AylienPlugin.java"  target-dir="src/com/telerik/aylien" />
+
+	</platform>
+
 
 </plugin>
