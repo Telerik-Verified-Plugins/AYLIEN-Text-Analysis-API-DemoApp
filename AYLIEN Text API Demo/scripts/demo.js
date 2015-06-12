@@ -11,7 +11,7 @@
         aylien.summarize(
             demoUrl,
             function (result) {
-              alert(result.sentences);
+              alert(result.sentences === undefined ? JSON.stringify(result) : result.sentences);
             });
       }
     },
@@ -21,7 +21,7 @@
         aylien.hashtags(
             demoUrl,
             function (result) {
-              alert(result.hashtags);
+              alert(result.hashtags === undefined ? JSON.stringify(result) : result.hashtags);
             });
       }
     },

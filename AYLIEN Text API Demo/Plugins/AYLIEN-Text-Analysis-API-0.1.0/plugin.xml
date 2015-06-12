@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.aylien.text" version="0.0.10" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="com.aylien.text" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>Aylien</name>
 	<description>Aylien Text Analysis API</description>
+
+	<preference name="API_KEY" />
 
 	<js-module name="aylien" src="www/aylien.js">
 		<clobbers target="aylien" />
@@ -22,8 +24,7 @@
 		<source-file src="src/ios/CDVAylien.m" />
 
         <config-file target="*-Info.plist" parent="AylienClientID">
-            <!-- replace with your own API key -->
-            <string>111111111111111111111</string>
+            <string>$API_KEY</string>
         </config-file>
 
 	</platform>
@@ -34,8 +35,7 @@
 		<source-file src="src/android/res/values/aylien.xml" target-dir="res/values" />
 
         <config-file target="res/values/aylien.xml" parent="/*">
-            <!-- replace with your own API key -->
-            <string name="api_key">111111111111111111111</string>
+            <string name="api_key">$API_KEY</string>
         </config-file>
 
 		<config-file target="res/xml/config.xml" parent="/*">
